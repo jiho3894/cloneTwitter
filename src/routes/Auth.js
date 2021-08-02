@@ -38,6 +38,8 @@ const Auth = () => {
     let provider;
     if(name === "google") {
       provider = new firebaseInstance.auth.GoogleAuthProvider();
+    } else if(name === "github") {
+      provider = new firebaseInstance.auth.GithubAuthProvider();
     }
     await authService.signInWithPopup(provider);
   };
@@ -65,6 +67,7 @@ const Auth = () => {
       <span onClick={toggleAccount}>{newAccount ? "로그인" : "계정 생성"}</span>
       <div>
         <button onClick={onSocialClick} name="google">구글 아이디로 로그인</button>
+        <button onClick={onSocialClick} name="github">깃허브 아이디로 로그인</button>
       </div>
     </div>
   );
