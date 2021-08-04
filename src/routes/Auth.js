@@ -61,10 +61,10 @@ const Auth = () => {
           required value={password} 
           onChange={onChange}
         />
-        <input type="submit" value={newAccount ? "계정 생성" : "로그인"}/>
+        <input type="submit" value={newAccount ? "계정생성" : "로그인"}/>
         {error}
       </form>
-      <span onClick={toggleAccount}>{newAccount ? "로그인" : "계정 생성"}</span>
+      <span onClick={toggleAccount}>{!newAccount ? "계정생성" : "로그인"}</span>
       <div>
         <button onClick={onSocialClick} name="google">구글 아이디로 로그인</button>
         <button onClick={onSocialClick} name="github">깃허브 아이디로 로그인</button>
