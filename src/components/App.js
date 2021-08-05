@@ -17,7 +17,6 @@ const App = () => {
   return (
     <>
     {init ? <RouterHandle isLoggedIn={Boolean(userObj)} userObj={userObj}/> : "로딩중..."}
-    <footer>&copy; {new Date().getFullYear()} Nwitter </footer>
     </>
   );
 }
