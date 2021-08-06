@@ -1,22 +1,43 @@
-import React, { useEffect, useState } from "react";
-import RouterHandle from "components/Router";
-import {authService} from "fbase";
+import React, { useState, useEffect } from "react";
+import AppRouter from "components/Router";
+import { authService } from "fbase";
 
-const App = () => {
+function App() {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
-    if(user) {
-      setUserObj(user);
-    } else {
-    } 
-    setInit(true);
-  });
+      if (user) {
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) => user.updateProfile(args),
+        });
+      } else {
+        setUserObj(null);
+      }
+      setInit(true);
+    });
   }, []);
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (args) => user.updateProfile(args),
+    });
+  };
   return (
     <>
-    {init ? <RouterHandle isLoggedIn={Boolean(userObj)} userObj={userObj}/> : "로딩중..."}
+      {init ? (
+        <AppRouter
+          refreshUser={refreshUser}
+          isLoggedIn={Boolean(userObj)}
+          userObj={userObj}
+        />
+      ) : (
+        "Initializing..."
+      )}
     </>
   );
 }
