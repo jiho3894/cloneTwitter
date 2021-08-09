@@ -5,6 +5,7 @@ import { authService } from "fbase";
 function App() {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
+
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -19,6 +20,7 @@ function App() {
       setInit(true);
     });
   }, []);
+
   const refreshUser = () => {
     const user = authService.currentUser;
     setUserObj({
@@ -27,6 +29,7 @@ function App() {
       updateProfile: (args) => user.updateProfile(args),
     });
   };
+  
   return (
     <>
       {init ? (

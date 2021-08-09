@@ -4,16 +4,19 @@ import { dbService, storageService } from "fbase";
 const Nweet = ({ nweetObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);
+
   const onDeleteClick = async () => {
     const ok = window.confirm("삭제하시겠습니까?");
     if (ok) {
       await dbService.doc(`nweet/${nweetObj.id}`).delete();
       if(nweetObj.attachmentUrl !== ""){
-      await storageService.refFromURL(nweetObj.attachmentUrl).delete();
+        await storageService.refFromURL(nweetObj.attachmentUrl).delete();
       }
     }
   };
+
   const toggleEditing = () => setEditing((prev) => !prev);
+
   const onSubmit = async (event) => {
     event.preventDefault();
     await dbService.doc(`nweet/${nweetObj.id}`).update({
@@ -21,12 +24,12 @@ const Nweet = ({ nweetObj, isOwner }) => {
     });
     setEditing(false);
   };
+
   const onChange = (event) => {
-    const {
-      target: { value },
-    } = event;
+    const {target: { value } } = event;
     setNewNweet(value);
   };
+  
   return (
     <div>
       {editing ? (

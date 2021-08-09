@@ -8,13 +8,14 @@ const AuthForm = () => {
   const [error, setError] = useState("");
 
   const onChange = (event) => {
-    const {target: {name, value}} = event;
+    const {target: { name, value }} = event;
     if(name === "email") {
       setEmail(value);
     } else if(name === "password") {
       setPassword(value);
     }
   }
+
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -31,6 +32,7 @@ const AuthForm = () => {
   };
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
+
   return (
     <>
       <form onSubmit={onSubmit}>
@@ -52,7 +54,7 @@ const AuthForm = () => {
         {error}
       </form>
       <span onClick={toggleAccount}>{!newAccount ? "계정생성" : "로그인"}</span>
-      </>
+    </>
   )
 }
 export default AuthForm;

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Navigation = ({userObj}) => (
+const Navigation = ({ userObj }) => (
   <nav>
     <ul>
       <li>
@@ -12,8 +12,6 @@ const Navigation = ({userObj}) => (
       </li>
     </ul>
   </nav>
-
-
 );
 
 export default Navigation;

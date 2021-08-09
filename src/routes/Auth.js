@@ -4,9 +4,7 @@ import React from 'react';
 
 const Auth = () => {
   const onSocialClick = async (event) => {
-    const {
-      target : {name}
-    } = event;
+    const {target : {name} } = event;
     let provider;
     if(name === "google") {
       provider = new firebaseInstance.auth.GoogleAuthProvider();
