@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "components/Router";
 import { authService } from "fbase";
+import GlobalStyles from "./GlobalStyles";
+import styled from "styled-components";
+
+const Body = styled.body`
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+`;
 
 function App() {
   const [init, setInit] = useState(false);
@@ -31,17 +40,20 @@ function App() {
   };
   
   return (
-    <>
+    <Body>
       {init ? (
+        <>
+        <GlobalStyles />
         <AppRouter
           refreshUser={refreshUser}
           isLoggedIn={Boolean(userObj)}
           userObj={userObj}
         />
+        </>
       ) : (
         "Initializing..."
       )}
-    </>
+    </Body>
   );
 }
 

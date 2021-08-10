@@ -4,6 +4,8 @@ import Auth from 'routes/Auth';
 import Home from 'routes/Home';
 import Navigation from "components/Navigation";
 import Profile from 'routes/Profile';
+import AccountForm from './AccountForm';
+
 
 const RouterHandle = ({ refreshUser, isLoggedIn, userObj }) => {
   return (
@@ -12,7 +14,7 @@ const RouterHandle = ({ refreshUser, isLoggedIn, userObj }) => {
       <Switch>
         {isLoggedIn ? (
         <>
-          <Route exact path="/">
+          <Route exact path="/Home" component={Home}>
             <Home userObj={userObj}/>
           </Route>
           <Route exact path="/profile">
@@ -20,9 +22,14 @@ const RouterHandle = ({ refreshUser, isLoggedIn, userObj }) => {
           </Route>
         </>
         ) : (
-          <Route exact path="/">
-            <Auth/>
-          </Route>
+          <>
+            <Route exact path="/" component={Auth}>
+              <Auth/>
+            </Route>
+            <Route exact path="/Account" component={AccountForm}>
+              <AccountForm/>
+            </Route>
+          </>
         )}
       </Switch>
     </Router>

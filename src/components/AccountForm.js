@@ -21,16 +21,11 @@ const AuthForm = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      /*data = await authService.createUserWithEmailAndPassword(email, password);*/
-      await authService.signInWithEmailAndPassword(email, password);
+      await authService.createUserWithEmailAndPassword(email, password);
     } catch(error) {
       setError(error.message);
     }
   };
-
-  const onLogin = () => {
-    history.push("/Home");
-  }
 
   return (
     <>
@@ -49,10 +44,9 @@ const AuthForm = () => {
           required value={password} 
           onChange={onChange}
         />
-          <input type="submit" value="로그인"></input>
+        <input type="submit" value="계정생성"/>
         {error ? "잘못입력했어" : ""}
       </form>
-      <Link to="/Account">계정생성</Link>
     </>
   )
 }
