@@ -118,7 +118,7 @@ const AuthForm = () => {
       await authService.createUserWithEmailAndPassword(email, password);
     } catch(error) {
       if(password !== passwordCheck) {
-        return alert('비밀번호와 비밀번호확인은 같아야 합니다.')
+        return alert('비밀번호와 비밀번호 확인이 일치해야 합니다.')
       }
     }
   };

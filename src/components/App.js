@@ -17,10 +17,12 @@ function App() {
 
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
+      console.log(user);
       if (user) {
         setUserObj({
           displayName: user.displayName,
           uid: user.uid,
+          email: user.email,
           updateProfile: (args) => user.updateProfile(args),
         });
       } else {
