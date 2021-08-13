@@ -6,18 +6,19 @@ import Navigation from "components/Navigation";
 import Profile from 'routes/Profile';
 import AccountForm from './AccountForm';
 
-
 const RouterHandle = ({ refreshUser, isLoggedIn, userObj }) => {
   return (
     <Router>
-      {isLoggedIn && <Navigation userObj={userObj}/>}
       <Switch>
         {isLoggedIn ? (
         <>
+          <Route exact path="/" component={Navigation}>
+            <Navigation userObj={userObj}/>
+          </Route>
           <Route exact path="/Home" component={Home}>
             <Home userObj={userObj}/>
           </Route>
-          <Route exact path="/profile">
+          <Route exact path="/profile" component={Profile}>
             <Profile refreshUser={refreshUser} userObj={userObj}/>
           </Route>
         </>
