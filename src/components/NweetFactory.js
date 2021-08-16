@@ -55,7 +55,7 @@ const NweetFactory = ({ userObj }) => {
         maxLength={100}
       />
       <input type="file" accept="image/*" onChange={onFileChange}/>
-      <input type="submit" value="Nweet" />
+      <input type="submit" value="올리기" />
       {attachment && (
         <div>
           <img alt="" src={attachment} width="50px" height="50px" />

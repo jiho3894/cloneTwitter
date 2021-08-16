@@ -44,9 +44,9 @@ const Nweet = ({ nweetObj, isOwner }) => {
                 required
                 onChange={onChange}
               />
-              <input type="submit" value="Update Nweet" />
+              <input type="submit" value="올리기" />
             </form>
-            <button onClick={toggleEditing}>Cancel</button>
+            <button onClick={toggleEditing}>취소</button>
           </>
           )}
         </>
@@ -56,8 +56,8 @@ const Nweet = ({ nweetObj, isOwner }) => {
           {nweetObj.attachmentUrl && <img alt="" src={nweetObj.attachmentUrl} width="50px" height="50px"/> }
           {isOwner && (
             <>
-              <button onClick={onDeleteClick}>Delete Nweet</button>
-              <button onClick={toggleEditing}>Edit Nweet</button>
+              <button onClick={onDeleteClick}>삭제하기</button>
+              <button onClick={toggleEditing}>수정하기</button>
             </>
           )}
         </>
