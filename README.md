@@ -1,4 +1,3 @@
-# https://jiho3894.github.io/cloneTwitter/
 
 # Getting Started with Create React App
 
