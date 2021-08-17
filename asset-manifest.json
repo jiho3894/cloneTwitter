@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/cloneTwitter/static/js/main.b6beb0f2.chunk.js",
-    "main.js.map": "/cloneTwitter/static/js/main.b6beb0f2.chunk.js.map",
-    "runtime-main.js": "/cloneTwitter/static/js/runtime-main.6de5289c.js",
-    "runtime-main.js.map": "/cloneTwitter/static/js/runtime-main.6de5289c.js.map",
-    "static/js/2.c1e78b6d.chunk.js": "/cloneTwitter/static/js/2.c1e78b6d.chunk.js",
-    "static/js/2.c1e78b6d.chunk.js.map": "/cloneTwitter/static/js/2.c1e78b6d.chunk.js.map",
-    "index.html": "/cloneTwitter/index.html",
-    "static/js/2.c1e78b6d.chunk.js.LICENSE.txt": "/cloneTwitter/static/js/2.c1e78b6d.chunk.js.LICENSE.txt"
+    "main.js": "/CharleyBlog/static/js/main.39f4cf68.chunk.js",
+    "main.js.map": "/CharleyBlog/static/js/main.39f4cf68.chunk.js.map",
+    "runtime-main.js": "/CharleyBlog/static/js/runtime-main.834c7f04.js",
+    "runtime-main.js.map": "/CharleyBlog/static/js/runtime-main.834c7f04.js.map",
+    "static/js/2.7b2a9a5b.chunk.js": "/CharleyBlog/static/js/2.7b2a9a5b.chunk.js",
+    "static/js/2.7b2a9a5b.chunk.js.map": "/CharleyBlog/static/js/2.7b2a9a5b.chunk.js.map",
+    "index.html": "/CharleyBlog/index.html",
+    "static/js/2.7b2a9a5b.chunk.js.LICENSE.txt": "/CharleyBlog/static/js/2.7b2a9a5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6de5289c.js",
-    "static/js/2.c1e78b6d.chunk.js",
-    "static/js/main.b6beb0f2.chunk.js"
+    "static/js/runtime-main.834c7f04.js",
+    "static/js/2.7b2a9a5b.chunk.js",
+    "static/js/main.39f4cf68.chunk.js"
   ]
 }
