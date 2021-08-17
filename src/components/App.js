@@ -44,17 +44,17 @@ function App() {
   
   return (
     <Body>
+      <GlobalStyles />
       {init ? (
         <>
-        <GlobalStyles />
-        <AppRouter
-          refreshUser={refreshUser}
-          isLoggedIn={Boolean(userObj)}
-          userObj={userObj}
-        />
+          <AppRouter
+            refreshUser={refreshUser}
+            isLoggedIn={Boolean(userObj)}
+            userObj={userObj}
+          />
         </>
       ) : (
-        "Initializing..."
+        "로딩중"
       )}
     </Body>
   );

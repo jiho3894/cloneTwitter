@@ -1,6 +1,11 @@
 import { dbService, storageService } from 'fbase';
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import {v4 as uuidv4 } from 'uuid';
+
+const Chat = styled.input`
+  width: 500px;
+`;
 
 const NweetFactory = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
@@ -47,12 +52,13 @@ const NweetFactory = ({ userObj }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
+      <Chat
         value={nweet}
         onChange={onChange}
         type="text"
         placeholder="채팅 입력"
         maxLength={100}
+        required
       />
       <input type="file" accept="image/*" onChange={onFileChange}/>
       <input type="submit" value="올리기" />

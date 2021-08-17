@@ -1,6 +1,6 @@
 import { authService } from 'fbase';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Profile = ({ refreshUser, userObj }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
@@ -34,6 +34,7 @@ const Profile = ({ refreshUser, userObj }) => {
         <input  type="submit" value="프로필 수정" />
       </form>
       <button onClick={onLogOutClick}>로그아웃</button>
+      <Link to="/">돌아가기</Link>
     </>
   );
 };
